@@ -16,3 +16,9 @@
 - npm i --save-dev @types/express
 - npm i prisma -D
 - npm i @prisma/client 
+- npx prisma init 
+- npx prisma migrate dev //used to run the schema and create the tables
+- npx prisma studio //show the models on browser
+- npm install nodemailer // lib to send e-mails
+- npm i --save-dev @types/nodemailer
+
