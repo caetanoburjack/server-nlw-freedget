@@ -12,17 +12,17 @@
 
 ## Commands 
 ```js
- npm init -y
+ npm init -y //start a node project (-y: without questions)
 
- npm i typescript @types/node ts-node-dev -D
+ npm i typescript @types/node ts-node-dev -D //install typescript on dev env
  
  npx tsc --init
  
- npm i express
+ npm i express //install express to handle routes
  
  npm i --save-dev @types/express
  
- npm i prisma -D //install Prima ORM on dev enviroment
+ npm i prisma -D //install Prima ORM on dev environment
  
  npm i @prisma/client //install Prima ORM that gonna be used on production
  
