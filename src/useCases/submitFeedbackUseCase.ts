@@ -1,3 +1,4 @@
+import { MailAdapter } from "../adapters/mailAdapter"
 import { FeedbacksRespository } from "../repositories/feedbacksRepository"
 
 interface SubmitFeedbackUseCaseRequest {
@@ -9,13 +10,35 @@ interface SubmitFeedbackUseCaseRequest {
 export class SubmitFeedbackUseCase {
     constructor(
         private feedbacksRepository: FeedbacksRespository,
+        private mailAdapter: MailAdapter
     ) { }
 
     async execute(request: SubmitFeedbackUseCaseRequest) {
         const { type, comment, screenshot } = request
 
+        if (!type) {
+            throw new Error('Type is required!')
+        }
+
+        if (!comment) {
+            throw new Error('Comment is required!')
+        }
+
+        if (screenshot && !screenshot.startsWith('data:image/png;base64')) {
+            throw new Error('Invalid screenshot format!')
+        }
+
         await this.feedbacksRepository.create({
             type, comment, screenshot
+        })
+
+        await this.mailAdapter.sendMail({
+            subject: 'New Feedback',
+            body: [
+                `<p>You just received a new feedback!</p>`,
+                `<p>Type: ${type}</p>`,
+                `<p>Comment: ${comment}</p>`,
+            ].join('\n')
         })
     }
 }

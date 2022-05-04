@@ -8,6 +8,8 @@
 - Prisma (ORM)
 - SQLite (Database)
 - Mailtrap.io (E-mail)
+- Jest (Tests)
+- SWC/Jest (Compiler)
 
 
 ## Commands 
@@ -20,7 +22,7 @@
  
  npm i express //install express to handle routes
  
- npm i --save-dev @types/express
+ npm i @types/express -D
  
  npm i prisma -D //install Prima ORM on dev environment
  
@@ -32,7 +34,19 @@
  
  npx prisma studio //show the models on browser
  
- npm install nodemailer // lib to send e-mails
+ npm i nodemailer // lib to send e-mails
  
- npm i --save-dev @types/nodemailer
+ npm i @types/nodemailer -D
+
+ npm i jest -D // lib to tests
+ 
+ npm i @types/jest -D
+ 
+ npx jest --init //starting configuration of the lib
+
+ npm i ts-node -D
+
+ npm i @swc/jest -D
+
+
 ```
