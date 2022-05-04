@@ -48,5 +48,8 @@
 
  npm i @swc/jest -D
 
+ npm i cors
 
+ npm i @types/cors -D
+ 
 ```
