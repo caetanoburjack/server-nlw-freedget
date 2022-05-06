@@ -5,6 +5,9 @@ import { SubmitFeedbackUseCase } from './useCases/submitFeedbackUseCase';
 
 export const routes = express.Router()
 
+routes.get('/', () => {
+    return 'Tudo certo por aqui'
+})
 
 routes.post('/feedbacks', async (req, res) => {
     const { type, comment, screenshot } = req.body
