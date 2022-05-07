@@ -52,4 +52,8 @@
 
  npm i @types/cors -D
  
+ npx tsc //generate js code on dist directory
+
 ```
+
+
